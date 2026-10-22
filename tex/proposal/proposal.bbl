@@ -1,0 +1,103 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{4}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter does
+%%% not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+\makeatletter
+\@ifundefined{NAT@parse@date}{}{\let\NAT@parse@date@orig\NAT@parse@date}
+\@ifundefined{NAT@parse@date}{}{\def\NAT@parse@date#1#2#3#4#5#6@@{\NAT@parse@date@orig#1#2#3#4#5#6@@\def\NAT@tempyear{0000}\def\NAT@tempexlab{{?}}\ifx\NAT@year\NAT@tempyear\ifx\NAT@exlab\NAT@tempexlab\def\NAT@date{[n.\,d.]}\else\edef\NAT@date{[n.\,d.]\NAT@exlab}\fi\fi}}
+\makeatother
+
+\bibitem[Alaminos~Fernández and Alaminos-Fernández(2026)]%
+        {fernandez2026}
+\bibfield{author}{\bibinfo{person}{Antonio Alaminos~Fernández} {and}
+  \bibinfo{person}{Paloma Alaminos-Fernández}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Algorithmic aesthetics and musical virality on
+  TikTok: A computational analysis of platform-native musical aesthetics across
+  Spanish- and English-language tracks}.
+\newblock \bibinfo{journal}{\emph{First Monday}} (\bibinfo{date}{04}
+  \bibinfo{year}{2026}).
+\newblock
+\href{https://doi.org/10.5210/fm.v31i4.14587}{doi:\nolinkurl{10.5210/fm.v31i4.14587}}
+
+
+\bibitem[Dickinson(2026)]%
+        {christopher_dickinson_2026}
+\bibfield{author}{\bibinfo{person}{Christopher Dickinson}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{genius-lyrics-cleaned (Revision 9742989)}.
+\newblock
+\href{https://doi.org/10.57967/hf/7978}{doi:\nolinkurl{10.57967/hf/7978}}
+
+
+\bibitem[Parada-Cabaleiro et~al\mbox{.}(2024)]%
+        {Cabaleiro2024}
+\bibfield{author}{\bibinfo{person}{Emilia Parada-Cabaleiro},
+  \bibinfo{person}{Maximilian Mayerl}, \bibinfo{person}{Stefan Brandl},
+  \bibinfo{person}{Marcin Skowron}, \bibinfo{person}{Markus Schedl},
+  \bibinfo{person}{Elisabeth Lex}, {and} \bibinfo{person}{Eva Zangerle}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Song lyrics have become simpler and more repetitive
+  over the last five decades}.
+\newblock \bibinfo{journal}{\emph{Scientific Reports}}  \bibinfo{volume}{14}
+  (\bibinfo{date}{03} \bibinfo{year}{2024}).
+\newblock
+\href{https://doi.org/10.1038/s41598-024-55742-x}{doi:\nolinkurl{10.1038/s41598-024-55742-x}}
+
+
+\bibitem[Prevedello et~al\mbox{.}(2024)]%
+        {Prevedello2024}
+\bibfield{author}{\bibinfo{person}{Giulio Prevedello}, \bibinfo{person}{Ines
+  Blin}, \bibinfo{person}{Bernardo Monechi}, {and} \bibinfo{person}{Enrico
+  Ubaldi}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Lyrics for Success: Embedding Features for Song
+  Popularity Prediction}. In \bibinfo{booktitle}{\emph{Proceedings of the 3rd
+  Workshop on {NLP} for Music and Audio ({NLP}4{M}us{A})}},
+  \bibfield{editor}{\bibinfo{person}{Anna Kruspe}, \bibinfo{person}{Sergio
+  Oramas}, \bibinfo{person}{Elena~V. Epure}, \bibinfo{person}{Mohamed Sordo},
+  \bibinfo{person}{Benno Weck}, \bibinfo{person}{SeungHeon Doh},
+  \bibinfo{person}{Minz Won}, \bibinfo{person}{Ilaria Manco}, {and}
+  \bibinfo{person}{Gabriel Meseguer-Brocal}} (Eds.).
+  \bibinfo{publisher}{Association for Computational Lingustics},
+  \bibinfo{address}{Oakland, USA}, \bibinfo{pages}{75--80}.
+\newblock
+\urldef\tempurl%
+\url{https://aclanthology.org/2024.nlp4musa-1.13/}
+\showURL{%
+\tempurl}
+
+
+\end{thebibliography}

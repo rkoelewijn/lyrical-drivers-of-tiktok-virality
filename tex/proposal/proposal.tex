@@ -1,0 +1,71 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage[numbers]{natbib} % This enforces the [1] style
+\newcommand{\cites}[1]{\citeauthor{#1} [\citeyear{#1}]}
+\title{Discovering the Lyrical Drivers of TikTok Virality}
+\author{Ruben Koelewijn \\ s1105300}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+% \section*{Motivation}
+% As seen in \cite{Cabaleiro2024}, lyrical content and music itself has been becoming simpler over time. ... .
+
+% We hypothesis that this is in line with the rise of tiktok and its impact on the music industry. \cites{fernandez2026} shows that going viral on tiktok with your song is not a random proces, but emerges from ... 
+
+% We wish to find to find out whether the decline in lyrical content is due to the fact of virality on tiktok. As shown by \cite{Prevedello2024}, predicting a songs popularity using lyrics is shown to be possible, but they fail to mention what makes a song succesful. 
+
+% Combining these studies into a text mining study we wish to find ... 
+
+% \section*{Data Description}
+% We will use song lyrics from 2020s and a list of viral tiktok songs, as our labels for these songs. 
+
+
+% \section*{Validation}
+% ?? 
+
+\section*{Research Question}
+The knowledge we wish to extract from the data is which lexical and structural features of current song lyrics drive a song to be TikTok viral \footnote{Tiktok virality is a concept defined as ``blowing up quickly and engaging followers in a way that is surprising'', see https://www.forbes.com/sites/johnbbrandon/article/how-to-go-viral-on-tiktok/}.
+\begin{itemize}
+    \item \textbf{Subquestion 1:} Can we train a machine learning classifier to accurately distinguish TikTok-viral songs from standard commercially successful songs based solely on extracted text features?
+    \item \textbf{Subquestion 2:} Which interpretable text features hold the highest predictive importance for platform virality?
+\end{itemize}
+
+\section*{Motivation}
+Recent studies show that song lyrics are becoming more simple and repetitive \cite{Cabaleiro2024}. We hypothesize that this trend is created by short-form video platforms such as Tiktok. As \cites{fernandez2026} shows, having your song become ``viral'' on Tiktok is not random, but emerges from a structured convergence of sonic properties, emotional expressivity, and algorithmic dynamics. Previous work by \cites{Prevedello2024} shows that predicting song popularity based on song lyrics is possible by utilizing a Large Language Model. Their approach, however, doesn't explain the lyrical reasons \textit{why} a certain song becomes popular. By using text mining techniques, we aim to find this out. 
+
+\section*{Data Description}
+The data we will be analysing is created from a data set which contains roughly 2.56 GB of English song lyrics \cite{christopher_dickinson_2026}. Since Tiktok has only existed from 2018, we will focus on songs that have been released between 2020 and 2025 . We will analyse the unstructured text of these songs and label trending TikTok songs according to playlists on Spotify (since TikTok's API is locked). We wish to create a dataset which will consist of 3,000 songs that have been labelled as ``Viral'' and 3,000 that were ``Non-Viral''. 
+
+\section*{Validation}
+Validation of our findings will be done by creating a 80/20 training and test set to prevent overfitting. Futhermore we will investigate the performance metrics of Accuracy, Precision, Recall, and $F_1$-scores to identify any biases. 
+
+
+% To ensure the robustness and generalizability of our findings, we will validate our methodology and results across three distinct dimensions:
+
+% \begin{itemize}
+%     \item \textbf{Model Evaluation:} To address Subquestion 1, the balanced dataset of 6,000 songs will be split into an 80/20 training and testing set. We will apply $k$-fold cross-validation (e.g., $k=5$) during the training phase to prevent overfitting and ensure reliable model performance. Because the dataset is strictly balanced, we will evaluate the classifiers using Accuracy, supplemented by Precision, Recall, and $F_1$-scores to identify any class-specific biases.
+    
+%     \item \textbf{Feature Significance:} To address Subquestion 2, the predictive importance of the extracted features will be validated using model interpretability techniques, such as SHAP (SHapley Additive exPlanations) or permutation feature importance. Additionally, we will apply statistical significance testing (e.g., independent $t$-tests or Chi-square tests) to verify that the variance in key structural features between the viral and non-viral groups is statistically significant and not due to random chance.
+% \end{itemize}
+
+% \cite{Cabaleiro2024}, music and lyrical content has been become simpler. They did lexical, linguistic structural rhyme emotion and complexity descriptors. Give no real reason for it tho, mostly that it IS happening. --> TxMM study 
+
+
+% \cite{fernandez2026}
+% The results of this analysis make clear that musical virality on TikTok is not a random process, nor is itsolely a function of user preferences or cultural momentum. Rather, it emerges from a structuredconvergence of sonic properties, emotional expressivity, and algorithmic dynamics. --> PCA and k-means clustering 
+
+
+
+% \cite{Prevedello2024} --> it is possible to predict succesful songs, but not shown WHAT in lyrics makes them succesful 
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}
+

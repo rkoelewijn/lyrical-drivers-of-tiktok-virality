@@ -1,0 +1,10 @@
+# ==============================================================================
+# Curated Non-Viral Commercial Playlists (2020 - 2025) -> Label = 0 (Non-Viral)
+# ==============================================================================
+# Add one Spotify Playlist URL, URI, or ID per line (e.g., Top Hits, Billboard,
+# New Music Friday, Pop Rising 2020-2025).
+# Any track that also appears in playlists_viral.txt is automatically excluded.
+#
+# Example format:
+# https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M  # Today's Top Hits
+

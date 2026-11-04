@@ -1,0 +1,10 @@
+# ==============================================================================
+# Curated TikTok Viral Playlists (2020 - 2025) -> Label = 1 (Viral)
+# ==============================================================================
+# Add one Spotify Playlist URL, URI, or ID per line.
+# Lines starting with '#' are ignored. You can add inline comments after '#'.
+#
+# Example format:
+# https://open.spotify.com/playlist/37i9dQZF1DX2L0iB23Enbq  # TikTok Hits
+# 37i9dQZF1DX6tTW0xDxScH                                    # Viral Hits
+

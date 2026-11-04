@@ -40,10 +40,9 @@
 \@ifundefined{NAT@parse@date}{}{\def\NAT@parse@date#1#2#3#4#5#6@@{\NAT@parse@date@orig#1#2#3#4#5#6@@\def\NAT@tempyear{0000}\def\NAT@tempexlab{{?}}\ifx\NAT@year\NAT@tempyear\ifx\NAT@exlab\NAT@tempexlab\def\NAT@date{[n.\,d.]}\else\edef\NAT@date{[n.\,d.]\NAT@exlab}\fi\fi}}
 \makeatother
 
-\bibitem[Alaminos~Fernández and Alaminos-Fernández(2026)]%
+\bibitem[Alaminos~Fernández(2026)]%
         {fernandez2026}
-\bibfield{author}{\bibinfo{person}{Antonio Alaminos~Fernández} {and}
-  \bibinfo{person}{Paloma Alaminos-Fernández}.}
+\bibfield{author}{\bibinfo{person}{Paloma Alaminos~Fernández}.}
   \bibinfo{year}{2026}\natexlab{}.
 \newblock \showarticletitle{Algorithmic aesthetics and musical virality on
   TikTok: A computational analysis of platform-native musical aesthetics across

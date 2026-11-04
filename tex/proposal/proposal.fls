@@ -103,14 +103,14 @@ INPUT C:\Users\ruben\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tf
 INPUT C:\Users\ruben\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT C:\Users\ruben\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
 INPUT C:\Users\ruben\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy9.tfm
-INPUT C:\Users\ruben\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT C:\Users\ruben\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Users\ruben\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+INPUT C:\Users\ruben\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
+INPUT C:\Users\ruben\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
+INPUT C:\Users\ruben\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT .\proposal.bbl
 INPUT .\proposal.bbl
 INPUT proposal.bbl
-INPUT C:\Users\ruben\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
-INPUT C:\Users\ruben\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT proposal.aux
 INPUT .\proposal.out
 INPUT .\proposal.out

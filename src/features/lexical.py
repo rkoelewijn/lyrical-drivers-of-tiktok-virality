@@ -1,27 +1,34 @@
-"""Group 1: Aggregated Lexical Diversity & Readability Features."""
+"""Group 1: Aggregated Lexical Diversity & Readability Features (Zangerle et al., Martín-Gutiérrez et al.)."""
 
 from __future__ import annotations
 
 from collections import Counter
 from functools import lru_cache
 import re
+import string
 from typing import Dict, List
 
 import pronouncing
 
-from src.features.preprocess import get_lyric_lines, get_word_tokens
+from src.features.preprocess import clean_lyric_text, get_lyric_lines, get_word_tokens
 
 _VOWEL_RUN_RE = re.compile(r"[aeiouy]+", re.IGNORECASE)
+_PUNCTUATION_SET = set(string.punctuation)
 
 LEXICAL_FEATURES: List[str] = [
     "ttr",
     "mattr_50",
     "hapax_ratio",
+    "dis_legomena_ratio",
+    "tris_legomena_ratio",
+    "unique_tokens_per_line",
     "mean_word_length",
     "mean_syllables_per_word",
     "polysyllable_ratio",
     "flesch_reading_ease",
     "flesch_kincaid_grade",
+    "digit_ratio",
+    "punct_ratio",
 ]
 
 
@@ -70,22 +77,42 @@ def compute_mattr(tokens: List[str], window: int = 50) -> float:
 
 
 def extract_lexical_features(text: str) -> Dict[str, float]:
-    """Extract Group 1 (Lexical Diversity & Readability) features for a single lyric text."""
+    """
+    Extract Group 1 (Lexical Diversity & Readability) features for a single lyric text,
+    incorporating Zangerle et al. [2020] and Martín-Gutiérrez et al. [2023] metrics.
+    """
     tokens = get_word_tokens(text, lowercase=True)
     lines = get_lyric_lines(text)
     n_tokens = len(tokens)
     n_lines = max(1, len(lines))
 
+    raw_cleaned = clean_lyric_text(text)
+    non_space_chars = [c for c in raw_cleaned if not c.isspace()]
+    n_non_space = max(1, len(non_space_chars))
+
+    digit_count = sum(1 for c in non_space_chars if c.isdigit())
+    punct_count = sum(1 for c in non_space_chars if c in _PUNCTUATION_SET)
+    digit_ratio = digit_count / n_non_space
+    punct_ratio = punct_count / n_non_space
+
     if n_tokens == 0:
-        return {feat: 0.0 for feat in LEXICAL_FEATURES}
+        res = {feat: 0.0 for feat in LEXICAL_FEATURES}
+        res["digit_ratio"] = float(digit_ratio)
+        res["punct_ratio"] = float(punct_ratio)
+        return res
 
     counts = Counter(tokens)
     n_types = len(counts)
     n_hapax = sum(1 for c in counts.values() if c == 1)
+    n_dis = sum(1 for c in counts.values() if c == 2)
+    n_tris = sum(1 for c in counts.values() if c == 3)
 
     ttr = n_types / n_tokens
     mattr_50 = compute_mattr(tokens, window=50)
     hapax_ratio = n_hapax / n_tokens
+    dis_legomena_ratio = (n_dis * 2) / n_tokens
+    tris_legomena_ratio = (n_tris * 3) / n_tokens
+    unique_tokens_per_line = n_types / n_lines
 
     total_chars = sum(len(t.replace("'", "")) for t in tokens)
     mean_word_length = total_chars / n_tokens
@@ -103,10 +130,14 @@ def extract_lexical_features(text: str) -> Dict[str, float]:
         "ttr": float(ttr),
         "mattr_50": float(mattr_50),
         "hapax_ratio": float(hapax_ratio),
+        "dis_legomena_ratio": float(dis_legomena_ratio),
+        "tris_legomena_ratio": float(tris_legomena_ratio),
+        "unique_tokens_per_line": float(unique_tokens_per_line),
         "mean_word_length": float(mean_word_length),
         "mean_syllables_per_word": float(mean_syllables),
         "polysyllable_ratio": float(polysyllable_ratio),
         "flesch_reading_ease": float(flesch_reading_ease),
         "flesch_kincaid_grade": float(flesch_kincaid_grade),
+        "digit_ratio": float(digit_ratio),
+        "punct_ratio": float(punct_ratio),
     }
-

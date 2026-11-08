@@ -30,16 +30,29 @@ DEFAULT_PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 
 
 def print_collection_report(
-    spotify_df: pd.DataFrame,
-    matched_df: pd.DataFrame,
+    *args,
     target_per_class: int = 3000,
+    **kwargs,
 ) -> None:
-    """Print an ASCII summary table comparing Spotify targets to English LRCLIB lyrics matches."""
-    v_sp = len(spotify_df[spotify_df["label"] == 1]) if "label" in spotify_df else 0
-    nv_sp = len(spotify_df[spotify_df["label"] == 0]) if "label" in spotify_df else 0
-
-    v_m = len(matched_df[matched_df["label"] == 1]) if "label" in matched_df else 0
-    nv_m = len(matched_df[matched_df["label"] == 0]) if "label" in matched_df else 0
+    """
+    Print an ASCII summary table comparing Spotify targets to English LRCLIB lyrics matches.
+    Supports both:
+      - print_collection_report(spotify_df, matched_df, target_per_class=3000)
+      - print_collection_report(viral_sp, non_viral_sp, viral_matched, non_viral_matched, target_per_class=3000)
+    """
+    if len(args) == 4:
+        v_sp = len(args[0])
+        nv_sp = len(args[1])
+        v_m = len(args[2])
+        nv_m = len(args[3])
+    elif len(args) >= 2:
+        spotify_df, matched_df = args[0], args[1]
+        v_sp = len(spotify_df[spotify_df["label"] == 1]) if "label" in spotify_df else 0
+        nv_sp = len(spotify_df[spotify_df["label"] == 0]) if "label" in spotify_df else 0
+        v_m = len(matched_df[matched_df["label"] == 1]) if "label" in matched_df else 0
+        nv_m = len(matched_df[matched_df["label"] == 0]) if "label" in matched_df else 0
+    else:
+        return
 
     v_rate = (v_m / v_sp * 100) if v_sp else 0.0
     nv_rate = (nv_m / nv_sp * 100) if nv_sp else 0.0

@@ -1,4 +1,4 @@
-"""Group 4: Syntactic / Part-of-Speech (POS) Tag Proportions via spaCy."""
+"""Group 4: Syntactic & Linguistic Features (POS, Lemma Ratio, Past Tense Ratio - Zangerle et al., Martín-Gutiérrez et al.)."""
 
 from __future__ import annotations
 
@@ -20,33 +20,36 @@ SYNTACTIC_FEATURES: List[str] = [
     "pos_intj_ratio",
     "pos_adp_det_ratio",
     "verb_to_noun_ratio",
+    "past_tense_ratio",
+    "lemma_ratio",
 ]
 
 _NLP_INSTANCE: Optional[Language] = None
 
 
 def get_spacy_pos_pipeline() -> Language:
-    """Load spaCy en_core_web_sm with parser, ner, and lemmatizer disabled for fast POS tagging."""
+    """Load spaCy en_core_web_sm with parser and ner disabled, retaining tagger and lemmatizer."""
     global _NLP_INSTANCE
     if _NLP_INSTANCE is None:
         _NLP_INSTANCE = spacy.load(
             "en_core_web_sm",
-            disable=["parser", "ner", "lemmatizer"],
+            disable=["parser", "ner"],
         )
     return _NLP_INSTANCE
 
 
 def _doc_to_pos_features(doc) -> Dict[str, float]:
-    """Compute Universal POS ratios from a processed spaCy Doc."""
-    pos_tags = [
-        tok.pos_
+    """Compute Universal POS, lemma ratio, and past tense verb ratio from a processed spaCy Doc."""
+    valid_tokens = [
+        tok
         for tok in doc
         if not tok.is_space and not tok.is_punct and tok.is_alpha
     ]
-    n_tokens = len(pos_tags)
+    n_tokens = len(valid_tokens)
     if n_tokens == 0:
         return {feat: 0.0 for feat in SYNTACTIC_FEATURES}
 
+    pos_tags = [tok.pos_ for tok in valid_tokens]
     counts = Counter(pos_tags)
     nouns = counts.get("NOUN", 0) + counts.get("PROPN", 0)
     verbs = counts.get("VERB", 0) + counts.get("AUX", 0)
@@ -55,6 +58,14 @@ def _doc_to_pos_features(doc) -> Dict[str, float]:
     prons = counts.get("PRON", 0)
     intjs = counts.get("INTJ", 0)
     adp_dets = counts.get("ADP", 0) + counts.get("DET", 0)
+
+    # Past tense verbs (VBD: past tense, VBN: past participle)
+    past_verbs = sum(1 for tok in valid_tokens if tok.tag_ in ("VBD", "VBN"))
+    past_tense_ratio = past_verbs / (verbs + 1e-6) if verbs > 0 else 0.0
+
+    # Lemma ratio (Zangerle et al., Martín-Gutiérrez et al.): unique lemmas / n_tokens
+    unique_lemmas = len({tok.lemma_.lower() for tok in valid_tokens})
+    lemma_ratio = unique_lemmas / n_tokens
 
     return {
         "pos_noun_ratio": float(nouns / n_tokens),
@@ -65,13 +76,15 @@ def _doc_to_pos_features(doc) -> Dict[str, float]:
         "pos_intj_ratio": float(intjs / n_tokens),
         "pos_adp_det_ratio": float(adp_dets / n_tokens),
         "verb_to_noun_ratio": float(verbs / (nouns + 1.0)),
+        "past_tense_ratio": float(past_tense_ratio),
+        "lemma_ratio": float(lemma_ratio),
     }
 
 
 def extract_syntactic_features(
     text: str, nlp: Optional[Language] = None
 ) -> Dict[str, float]:
-    """Extract Group 4 (Syntactic / POS) features for a single lyric text."""
+    """Extract Group 4 (Syntactic & Linguistic) features for a single lyric text."""
     if nlp is None:
         nlp = get_spacy_pos_pipeline()
     cleaned = clean_lyric_text(text)
@@ -86,7 +99,7 @@ def extract_syntactic_features_batch(
     batch_size: int = 256,
     show_progress: bool = True,
 ) -> List[Dict[str, float]]:
-    """Extract Group 4 (Syntactic / POS) features in batches via nlp.pipe."""
+    """Extract Group 4 (Syntactic & Linguistic) features in batches via nlp.pipe."""
     nlp = get_spacy_pos_pipeline()
     cleaned_texts = [clean_lyric_text(t) for t in texts]
     results: List[Dict[str, float]] = []
@@ -96,10 +109,9 @@ def extract_syntactic_features_batch(
         iterator = tqdm(
             iterator,
             total=len(cleaned_texts),
-            desc="Extracting POS features (spaCy)",
+            desc="Extracting POS, Lemma & Tense features (spaCy)",
         )
 
     for doc in iterator:
         results.append(_doc_to_pos_features(doc))
     return results
-

@@ -1,4 +1,4 @@
-"""Master Phase 2 pipeline: Extract all 5 interpretable feature groups and save train/test matrices."""
+"""Master Phase 2 pipeline: Extract all 5 interpretable feature groups (incorporating Zangerle et al. & Martín-Gutiérrez et al.)."""
 
 from __future__ import annotations
 
@@ -30,7 +30,7 @@ FEATURE_GROUPS: Dict[str, List[str]] = {
     "1_Lexical_Diversity_Readability": LEXICAL_FEATURES,
     "2_Repetition_Compressibility": REPETITION_FEATURES,
     "3_Function_Words_Pronouns": PRONOUN_FUNCTION_FEATURES,
-    "4_Syntactic_POS": SYNTACTIC_FEATURES,
+    "4_Syntactic_Linguistic": SYNTACTIC_FEATURES,
     "5_Structure_Rhyme": STRUCTURE_RHYME_FEATURES,
 }
 
@@ -44,7 +44,7 @@ def extract_all_features_df(
     text_col: str = "lyrics",
     show_progress: bool = True,
 ) -> pd.DataFrame:
-    """Extract all 5 stylometric feature groups for a DataFrame of songs."""
+    """Extract all 44 stylometric feature groups for a DataFrame of songs."""
     texts = df[text_col].fillna("").astype(str).tolist()
     n = len(texts)
 
@@ -86,7 +86,7 @@ def run_feature_pipeline(
     force_recompute: bool = False,
 ) -> Dict[str, pd.DataFrame]:
     """
-    Compute all 34 interpretable stylometric features on dataset_full.parquet,
+    Compute all 44 interpretable stylometric features on dataset_full.parquet,
     align with train.parquet and test.parquet, and save features_*.parquet.
     """
     proc_dir = Path(processed_dir) if processed_dir else DEFAULT_PROCESSED_DIR
@@ -94,29 +94,36 @@ def run_feature_pipeline(
     train_out = proc_dir / "features_train.parquet"
     test_out = proc_dir / "features_test.parquet"
 
-    if (
-        not force_recompute
-        and full_out.exists()
-        and train_out.exists()
-        and test_out.exists()
-    ):
-        print(f"[Phase 2 Cache] Loading precomputed features from {proc_dir}...")
-        return {
-            "full": pd.read_parquet(full_out),
-            "train": pd.read_parquet(train_out),
-            "test": pd.read_parquet(test_out),
-        }
-
     full_df = pd.read_parquet(proc_dir / "dataset_full.parquet")
     train_df = pd.read_parquet(proc_dir / "train.parquet")
     test_df = pd.read_parquet(proc_dir / "test.parquet")
 
+    # Validate cache integrity: check file existence, matching row counts, and all feature columns
+    if not force_recompute and full_out.exists() and train_out.exists() and test_out.exists():
+        cached_full = pd.read_parquet(full_out)
+        cached_train = pd.read_parquet(train_out)
+        cached_test = pd.read_parquet(test_out)
+
+        cols_match = all(c in cached_full.columns for c in ALL_FEATURE_COLUMNS)
+        rows_match = (
+            len(cached_full) == len(full_df)
+            and len(cached_train) == len(train_df)
+            and len(cached_test) == len(test_df)
+        )
+        if cols_match and rows_match:
+            print(f"[Phase 2 Cache] Loaded valid precomputed features ({len(cached_full)} tracks, {len(ALL_FEATURE_COLUMNS)} features).")
+            return {
+                "full": cached_full,
+                "train": cached_train,
+                "test": cached_test,
+            }
+
     print(
-        f"[Phase 2] Extracting {len(ALL_FEATURE_COLUMNS)} features across 5 groups for {len(full_df)} tracks..."
+        f"[Phase 2] Extracting {len(ALL_FEATURE_COLUMNS)} features across 5 groups for {len(full_df)} English tracks..."
     )
     features_full = extract_all_features_df(full_df, text_col="lyrics", show_progress=True)
 
-    # Map extracted features onto train and test splits by match_key (avoiding duplicate computation)
+    # Map extracted features onto train and test splits by match_key
     feat_lookup = features_full.set_index("match_key")[ALL_FEATURE_COLUMNS]
     features_train = train_df.join(feat_lookup, on="match_key")
     features_test = test_df.join(feat_lookup, on="match_key")
@@ -141,4 +148,3 @@ def run_feature_pipeline(
 
 if __name__ == "__main__":
     run_feature_pipeline(force_recompute=True)
-

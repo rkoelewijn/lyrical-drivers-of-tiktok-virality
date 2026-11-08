@@ -1,4 +1,4 @@
-"""Statistical validation utilities: 95% Confidence Intervals and Chi-Square (X^2) vocabulary tests."""
+"""Statistical validation utilities: 95% Confidence Intervals, Multiple Testing Corrections, and Chi-Square (X^2) tests."""
 
 from __future__ import annotations
 
@@ -18,8 +18,9 @@ def compute_feature_confidence_intervals(
     label_col: str = "label",
 ) -> pd.DataFrame:
     """
-    Compute 95% Confidence Intervals (mean +/- 1.96 * SE), Cohen's d, and Welch's t-test
-    comparing Viral (label=1) vs. Non-Viral (label=0) across all stylometric feature groups.
+    Compute 95% Confidence Intervals (mean +/- 1.96 * SE), Cohen's d, Welch's t-test,
+    and multiple-testing corrections (Bonferroni & Benjamini-Hochberg FDR)
+    comparing Viral (label=1) vs. Non-Viral (label=0) across all feature groups.
     """
     viral_df = df[df[label_col] == 1]
     non_viral_df = df[df[label_col] == 0]
@@ -27,6 +28,8 @@ def compute_feature_confidence_intervals(
     rows = []
     for group_name, feat_list in feature_groups.items():
         for feat in feat_list:
+            if feat not in df.columns:
+                continue
             v_vals = viral_df[feat].dropna().to_numpy(dtype=float)
             nv_vals = non_viral_df[feat].dropna().to_numpy(dtype=float)
 
@@ -87,9 +90,20 @@ def compute_feature_confidence_intervals(
 
     res_df = pd.DataFrame(rows)
     if not res_df.empty:
-        res_df = res_df.sort_values("abs_cohens_d", ascending=False).reset_index(
-            drop=True
-        )
+        # Multiple testing corrections across all features
+        m = len(res_df)
+        res_df["bonferroni_p"] = (res_df["p_value"] * m).clip(upper=1.0)
+        res_df["significant_bonferroni"] = res_df["bonferroni_p"] < 0.05
+
+        # Benjamini-Hochberg FDR
+        sorted_indices = res_df["p_value"].sort_values().index
+        p_sorted = res_df.loc[sorted_indices, "p_value"].values
+        ranks = np.arange(1, m + 1)
+        fdr_p = np.minimum.accumulate((p_sorted * m / ranks)[::-1])[::-1]
+        res_df.loc[sorted_indices, "fdr_bh_p"] = np.clip(fdr_p, 0.0, 1.0)
+        res_df["significant_fdr"] = res_df["fdr_bh_p"] < 0.05
+
+        res_df = res_df.sort_values("abs_cohens_d", ascending=False).reset_index(drop=True)
     return res_df
 
 
@@ -103,13 +117,6 @@ def compute_chi_square_vocabulary(
     """
     Compute 2x2 Chi-Square (X^2) test of independence (Lecture 6) across document presence
     for vocabulary terms in Viral (label=1) vs. Non-Viral (label=0) songs.
-
-    2x2 Contingency table for term t:
-      A = # Viral songs containing t
-      B = # Non-Viral songs containing t
-      C = # Viral songs NOT containing t (N_1 - A)
-      D = # Non-Viral songs NOT containing t (N_0 - B)
-      X^2 = N * (A*D - B*C)^2 / ((A+C)*(B+D)*(A+B)*(C+D))
     """
     viral_mask = df[label_col] == 1
     n1 = int(viral_mask.sum())
@@ -171,4 +178,3 @@ def compute_chi_square_vocabulary(
     if top_k is not None and not res_df.empty:
         return res_df.head(top_k)
     return res_df
-

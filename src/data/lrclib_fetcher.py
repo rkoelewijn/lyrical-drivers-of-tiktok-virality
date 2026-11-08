@@ -27,32 +27,63 @@ USER_AGENT = "TxMM-Lyrics-Research/1.0 (Radboud University Data Science Project)
 
 _thread_local = threading.local()
 
-# High-frequency English function words used for robust, fast English lyrics validation
-ENGLISH_STOPWORDS: Set[str] = {
-    "the", "you", "i", "me", "my", "and", "to", "a", "in", "it", "is", "that",
-    "of", "for", "on", "with", "your", "im", "dont", "all", "we", "be", "so",
-    "just", "like", "but", "what", "yeah", "no", "up", "out", "this", "know",
-    "can", "cause", "get", "got", "was", "when", "if", "at", "go", "see", "now",
-    "they", "she", "he", "have", "are", "do", "will", "from", "one", "tell",
-}
+from collections import Counter
+from nltk.corpus import stopwords
+
+_LANGUAGES = ["english", "dutch", "spanish", "french", "german", "portuguese", "italian"]
+_STOPWORDS_BY_LANG: Dict[str, Set[str]] = {}
+try:
+    for _lang in _LANGUAGES:
+        _stop_set = set(stopwords.words(_lang))
+        if _lang in ("spanish", "french", "italian"):
+            _stop_set.discard("la")  # 'la' is commonly sung in English lyrics
+        _STOPWORDS_BY_LANG[_lang] = _stop_set
+except Exception:
+    pass
+
+ENGLISH_STOPWORDS: Set[str] = _STOPWORDS_BY_LANG.get(
+    "english",
+    {
+        "the", "you", "i", "me", "my", "and", "to", "a", "in", "it", "is", "that",
+        "of", "for", "on", "with", "your", "im", "dont", "all", "we", "be", "so",
+        "just", "like", "but", "what", "yeah", "no", "up", "out", "this", "know",
+    },
+)
 
 
-def is_english_lyrics(text: str, min_words: int = 30, min_stopword_matches: int = 5) -> bool:
+def is_english_lyrics(text: str, min_words: int = 25) -> bool:
     """
-    Verify that lyric text is predominantly English by checking for section structure,
-    sufficient word volume, and high-frequency English function words.
-    Filters out non-English tracks (Spanish, French, Portuguese phonk, K-pop) and instrumentals.
+    Verify that lyric text is predominantly English via NLTK multilingual stopword profiling.
+    Compares word distribution against Dutch, Spanish, French, German, Portuguese, and Italian.
+    Filters out Dutch rap/pop, Latin tracks, phonk, and foreign chart hits.
     """
     if not isinstance(text, str) or not text.strip():
         return False
-    # Strip bracketed section indicators like [Chorus], [Verse 1]
     cleaned = re.sub(r"\[[^\]]*\]", " ", text)
     tokens = re.findall(r"[a-zA-Z]+(?:'[a-zA-Z]+)?", cleaned.lower())
     if len(tokens) < min_words:
         return False
-    unique_tokens = set(tokens)
-    overlap = len(unique_tokens & ENGLISH_STOPWORDS)
-    return overlap >= min_stopword_matches
+
+    if not _STOPWORDS_BY_LANG:
+        unique_tokens = set(tokens)
+        return len(unique_tokens & ENGLISH_STOPWORDS) >= 6
+
+    word_counts = Counter(tokens)
+    scores = {
+        lang: sum(word_counts[w] for w in stop_set if w in word_counts)
+        for lang, stop_set in _STOPWORDS_BY_LANG.items()
+    }
+    top_lang, top_score = max(scores.items(), key=lambda x: x[1])
+
+    # Must be classified as English, have at least 15 English stopwords,
+    # and comfortably exceed Dutch, Spanish, and French scores
+    return bool(
+        top_lang == "english"
+        and scores["english"] >= 15
+        and scores["english"] > 2 * scores.get("dutch", 0)
+        and scores["english"] > 2 * scores.get("spanish", 0)
+        and scores["english"] > 2 * scores.get("french", 0)
+    )
 
 
 def _get_thread_session() -> requests.Session:

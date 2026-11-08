@@ -1,13 +1,14 @@
-"""Group 3: Function Words, Pronouns & Conversational Markers."""
+"""Group 3: Function Words, Pronouns & Conversational Markers (Zangerle et al., Martín-Gutiérrez et al.)."""
 
 from __future__ import annotations
 
 from typing import Dict, List, Set
 
-from src.features.preprocess import get_word_tokens
+from src.features.preprocess import get_lyric_lines, get_word_tokens
 
 PRONOUN_FUNCTION_FEATURES: List[str] = [
     "function_word_ratio",
+    "stop_words_per_line",
     "first_person_sg_ratio",
     "first_person_pl_ratio",
     "second_person_ratio",
@@ -76,7 +77,10 @@ FUNCTION_WORDS: Set[str] = (
 def extract_pronoun_function_features(text: str) -> Dict[str, float]:
     """Extract Group 3 (Function Words & Pronouns) features for a single lyric text."""
     tokens = get_word_tokens(text, lowercase=True)
+    lines = get_lyric_lines(text)
     n_tokens = len(tokens)
+    n_lines = max(1, len(lines))
+
     if n_tokens == 0:
         return {feat: 0.0 for feat in PRONOUN_FUNCTION_FEATURES}
 
@@ -89,10 +93,10 @@ def extract_pronoun_function_features(text: str) -> Dict[str, float]:
 
     return {
         "function_word_ratio": float(fn_count / n_tokens),
+        "stop_words_per_line": float(fn_count / n_lines),
         "first_person_sg_ratio": float(fp_sg_count / n_tokens),
         "first_person_pl_ratio": float(fp_pl_count / n_tokens),
         "second_person_ratio": float(sp_count / n_tokens),
         "third_person_ratio": float(tp_count / n_tokens),
         "interjection_adlib_ratio": float(intj_count / n_tokens),
     }
-

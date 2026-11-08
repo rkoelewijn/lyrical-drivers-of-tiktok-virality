@@ -1422,6 +1422,7 @@ Computing Machinery]
           \else
             \emph{Proceedings of \acmConference@name, \acmConference@date}%
           \fi
+          \fi
       \fi}
   \endgroup
   \setcounter{footnote}{0}%

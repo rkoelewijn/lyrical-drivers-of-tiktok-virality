@@ -15,6 +15,21 @@
 \usepackage{url}
 \usepackage{color}
 \usepackage{enumitem}
+\usepackage{color}
+\let\Bbbk\relax
+\usepackage{todo}
+\usepackage{enumitem}
+\newcounter{questioncounter}
+\newcommand{\question}[1]{\stepcounter{questioncounter}\todo[color=yellow!40]{\thequestioncounter. #1}}
+\newcommand{\source}[1]{\todo[color=blue!40]{#1}}
+\newcommand{\changes}[1]{\todo[color=orange!40]{#1}}
+\newcommand{\optional}[1]{\todo[color=gray!40]{#1}}
+\newcommand{\additions}[1]{\todo[color=green!40]{#1}}
+\newcommand{\feedback}[1]{\todo[color=red!40]{#1}}
+
+\newcommand{\etal}{et al.\@\xspace}
+\newcommand{\cites}[1]{\citeauthor{#1} [\citeyear{#1}]}
+
 \hyphenation{Media-Eval}
 
 
@@ -45,7 +60,7 @@
 
 
 \begin{document}
-\title{Formatting Example TxMM}
+\title{Discovering the Lyrical Drivers of TikTok Virality}
 %\titlenote{Produces the permission block, and
 %  copyright information}
 %\subtitle{Extended Abstract}
@@ -59,10 +74,10 @@
 %\email{m.a.larson@tudelft.nl, gareth.jones@computing.dcu.ie, bionescu@imag.pub.ro}
 %\email{mohammad.soleymani@unige.ch, guig@irisa.fr}
 
-\author{G.K.M. Tobin}
+\author{Ruben Koelewijn}
 %%\authornote{The secretary disavows any knowledge of this author's actions.}
-\affiliation{Institute for Clarity in Documentation, Ohio, USA}
-\email{webmaster@marysville-ohio.com}
+\affiliation{Radboud University, Nijmegen, The Netherlands}
+\email{ruben.koelewijn@ru.nl}
 %
 %\author{Lars Th{\o}rv{\"a}ld}
 %%\authornote{This author is the
@@ -86,10 +101,10 @@
 %\affiliation{The Th{\o}rv{\"a}ld Group, Iceland}
 %\email{jsmith@affiliation.org}
 
-\renewcommand{\shortauthors}{Your name}
-\renewcommand{\shorttitle}{Short title of your paper}
+\renewcommand{\shortauthors}{Ruben Koelewijn}
+\renewcommand{\shorttitle}{Discovering Lyrical Tiktok Virality}
 
-\begin{abstract}
+\begin{abstract} 
 Your readers will read your abstract in order to decide whether or not to read the entire paper.
 Keep it short, but make it complete.
 Remember, the abstract is \emph{not} and introduction to your paper. 
@@ -200,7 +215,8 @@ We take this opportunity to remind you that any paragraph you write should consi
 ACM tells us, ``You can use whatever symbols, accented characters, or non-English
 characters you need anywhere in your document; you can find a complete
 list of what is available in the \textit{\LaTeX\ User's Guide}
-\cite{Lamport:LaTeX}." In the following section, there is more information from the original ACM version of this sample file.
+%\cite{Lamport:LaTeX}."
+ In the following section, there is more information from the original ACM version of this sample file.
 
 \section{Even More Information}
 
@@ -212,7 +228,7 @@ invoked with the usual \texttt{{\char'134}begin\,\ldots{\char'134}end}
 construction or with the short form \texttt{\$\,\ldots\$}. You
 can use any of the symbols and structures,
 from $\alpha$ to $\omega$, available in
-\LaTeX~\cite{Lamport:LaTeX}; this section will simply show a
+%\LaTeX~\cite{Lamport:LaTeX}; this section will simply show a
 few examples of in-text equations in context. Notice how
 this equation:
 \begin{math}
@@ -235,7 +251,8 @@ the \textbf{displaymath}
 environment.  
 
 \subsection{Tables}
-We include Table~\ref{tab:freq} so that you have an example of a table.
+We include Table~%\ref{tab:freq}
+ so that you have an example of a table.
 \begin{table}
   \caption{Frequency of Special Characters}
   \label{tab:freq}
@@ -311,9 +328,9 @@ Please think carefully about those aspects of your approach that did not work as
 Even if you are disappointed by these aspects, the lessons you learned may be valuable for other researchers moving forward.
 Please describe them here, focusing on what you feel are the most valuable points.
 
-\begin{acks}
-Add any acknowledgements here.
-\end{acks}
+% \begin{acks}
+% Add any acknowledgements here.
+% \end{acks}
 
 \bibliographystyle{ACM-Reference-Format}
 \def\bibfont{\small} % comment this line for a smaller fontsize

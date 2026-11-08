@@ -41,8 +41,10 @@ _MULTI_SPACE_RE = re.compile(r"\s+")
 
 
 def _ascii_fold(text: str) -> str:
-    """Fold Unicode accents/diacritics and normalize smart quotes to ASCII."""
-    normalized = unicodedata.normalize("NFKD", text)
+    """Fold Unicode accents/diacritics, strip zero-width characters, and normalize smart quotes to ASCII."""
+    # Strip invisible zero-width spaces / formatting characters common in Genius titles
+    clean_text = re.sub(r"[\u200b\u200c\u200d\ufeff\u00ad]", "", text)
+    normalized = unicodedata.normalize("NFKD", clean_text)
     return "".join(ch for ch in normalized if not unicodedata.combining(ch))
 
 

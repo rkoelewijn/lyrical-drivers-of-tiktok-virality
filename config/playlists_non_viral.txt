@@ -7,4 +7,218 @@
 #
 # Example format:
 # https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M  # Today's Top Hits
+https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M  # Today's Top Hits
+https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd  # RapCaviar
 
+
+# --- Auto-discovered playlists via Spotify Search ---
+https://open.spotify.com/playlist/6UeSakyzhiEt4NB3UAd6NQ  # Billboard Hot 100
+https://open.spotify.com/playlist/2ezC9MOuPfZVPwf5Cg8Rc9  # Billboard’s Top Hot 100 Songs of the 21st Century Chart
+https://open.spotify.com/playlist/0IuhcptWaz76riWBMNK6LH  # Billboard Hits: 2020–2026
+https://open.spotify.com/playlist/0quPSM9DiUpY9RZIzlc0w0  # Best of Billboard 2010-2020
+https://open.spotify.com/playlist/0iO38UTCObdRnRGhq7y0qw  # One's: 2020s Billboard Hot 100 #1 Hits
+https://open.spotify.com/playlist/1quOrOdjOgrhXxlG5cp6Pc  # The 20s: The Billboard Hot 100 Complete History of Pop
+https://open.spotify.com/playlist/7bu7BZEusLNJSaAuUUZBKn  # HOUSE MUSIC 2026 (Top 100)
+https://open.spotify.com/playlist/19vmHO1Mkip2bn3I5jBnsz  # 2020s Number Ones
+https://open.spotify.com/playlist/4XbUTUESZDcddgPuSaOlrT  # 2021 Billboard Year End Hot 100 (No Duplicates)
+https://open.spotify.com/playlist/0ueT9dAlqLLaOxBuqQfN8Y  # Billboard HOT 100: 2021
+https://open.spotify.com/playlist/69anrK5sb3qAtgnt07daJl  # 2021 Billboard JAPAN HOT 100
+https://open.spotify.com/playlist/0t0MaekHZ6qrlcXee72MzS  # Billboard Hot 100 1990-2021
+https://open.spotify.com/playlist/4ixrFj7kqLqS6oUxpsgFmY  # INTRO HYPE 2026
+https://open.spotify.com/playlist/3xBeF2bX6RRt7HTxiQmgQj  # 2022 Billboard Year End Hot 100 (No Duplicates)
+https://open.spotify.com/playlist/78xbP3FhfATJrpV89eT4RB  # Billboard Year-End Hot 100: 2022
+https://open.spotify.com/playlist/1P39I532Z3TWDw2ggm3Y7k  # 2022 Billboard Year End Hot 100
+https://open.spotify.com/playlist/5ApUEfAKsEopkhYJiiRjh1  # Billboard Top 50 Songs 2022
+https://open.spotify.com/playlist/7GHS60teoObNo9yz2YuUPB  # 2022 Billboard HOT100 Yearend Chart(年間チャート)
+https://open.spotify.com/playlist/2FVuVMe3WUkfxUXnfwNxpS  # Billboard Year-End Hot 100: 2023
+https://open.spotify.com/playlist/2olmwY1gfIl9hWIqG2pw3X  # 2023 Billboard Year End Hot 100 (No Duplicates)
+https://open.spotify.com/playlist/1to82gJCaj0CTwDA8b3iGo  # Billboard Hot 100 - Top Pop Songs Playslist 2023
+https://open.spotify.com/playlist/5JSdfAxYyxqFhIlAKUIzcc  # Billboard Top Songs 2023
+https://open.spotify.com/playlist/4DdEr5DjYqw2sjtHm4T7WU  # Top Billboard 2023
+https://open.spotify.com/playlist/2tpSdD4wfe5elx7iMtxDcF  # 2023 Billboard Year End Hot 100
+https://open.spotify.com/playlist/6vDGVr652ztNWKZuHvsFvx  # Deep House 2026
+https://open.spotify.com/playlist/7c2c13pKxvFDSV4WSyydyg  # Billboard Hot 100: All #1 hit songs 1958-2024
+https://open.spotify.com/playlist/5C41vcHVDKBCmh0kSFIkjY  # 2024 Billboard Year End Hot 100 (No Duplicates)
+https://open.spotify.com/playlist/4gbv8iJM6IbnIihY48QL6T  # TOP 100 Songs of 2024 - Billboard Hot 100 - Top Hits 2024
+https://open.spotify.com/playlist/2WTBtnpVdoEt2KtYxceBrx  # Evergreen: A Brief History of the Billboard Hot 100 1959-2024
+https://open.spotify.com/playlist/0iNOs9oXZfkKkZceQlPNcd  # Top 40 | Qmusic
+https://open.spotify.com/playlist/7K4AkVG2zcZUj9RBwVtPKZ  # Thalia Intro Playlist 2024-2025
+https://open.spotify.com/playlist/1O6G4A9nY31aCZvnr60RnQ  # 538 TOP 50
+https://open.spotify.com/playlist/07b07XZvVvGXy9SYAc5eVt  # 2025 Billboard Hot 100 Yearend Chart
+https://open.spotify.com/playlist/5vlbQXMgqLW03zeh1zupCK  # 2025 Billboard Year-End Hot 100 (No Duplicates)
+https://open.spotify.com/playlist/5ezT53loFDz770qOW5vpUg  # Top 100 Songs 2025 - Best Pop Hits 2025 - Pop Music In English 2025 - Billboard Top 50 This Week - Billboard Hot 100 - Top Song 2025 - Pop Song 2025
+https://open.spotify.com/playlist/53lgNqNOF1gyLQsTPqQxfO  # 2026年上半期Billboard JAPAN総合ソング・チャート"JAPAN Hot 100"
+https://open.spotify.com/playlist/6s2oVTnYPWiOQ3NWeQXQi0  # Top 100 over 2020
+https://open.spotify.com/playlist/5l771HfZDqlBsDFQzO0431  # Top Hits of 2018
+https://open.spotify.com/playlist/26sGzSJGUxhqFlvNW4X15t  # Old hits 2000-2020😆
+https://open.spotify.com/playlist/6g40a9GjWBkX8ewR0vF9C2  # DANCE MUSIC 2026 🙌 Best Dance 2026 & EDM Hits 2026 & 2020s
+https://open.spotify.com/playlist/5GhQiRkGuqzpWZSE7OU4Se  # Top Hits of 2021
+https://open.spotify.com/playlist/5lH9NjOeJvctAO92ZrKQNB  # Qmusic Top 40
+https://open.spotify.com/playlist/1cCwREdWvFoeesP9B1we1v  # Top 100 over 2021
+https://open.spotify.com/playlist/3poim5KiJTQjFWUG35bw7Q  # SLAM! 40 2026 | updated weekly | TOP 40 |
+https://open.spotify.com/playlist/24DKKckhcPEXACdqlYTvdh  # 2010-2020 Top Hits (2010’s)
+https://open.spotify.com/playlist/2MSE9BQC2U1i3U4NNltxOw  # Techno House 2026 Hits
+https://open.spotify.com/playlist/56r5qRUv3jSxADdmBkhcz7  # Top Hits of 2022
+https://open.spotify.com/playlist/6XM09BXwn7GbPOBtYz4P0c  # Top 100 over 2022
+https://open.spotify.com/playlist/17ZxzwlUY9wlSGLVtUFZ2D  # De 538 TOP 1000 - 2022
+https://open.spotify.com/playlist/6unJBM7ZGitZYFJKkO0e4P  # Top Hits of 2023
+https://open.spotify.com/playlist/2Bv8wB6wsgDCw9Xp7tnuVL  # Greatest hits aller tijden 8000+
+https://open.spotify.com/playlist/4tMMR1XHcX2kbPTrkeqbxd  # Top 100 over 2023
+https://open.spotify.com/playlist/774kUuKDzLa8ieaSmi8IfS  # Top Hits of 2024
+https://open.spotify.com/playlist/0wtMUPPMMr5lxdjfL9KgFx  # Top2000 2023
+https://open.spotify.com/playlist/1OeV3kjAdXW6nJ8s8enxWj  # De 90's Top 538 - 2023
+https://open.spotify.com/playlist/5CbM67XKy0ZTv5kZsWB8E6  # Q-top 500 van de 80s | editie 2023 | Qmusic
+https://open.spotify.com/playlist/5mCL9f0hUeCm49FFPY8JGn  # Top Hits of 2025
+https://open.spotify.com/playlist/7r0iMs77iASrPW9qWkUEhl  # Top 100 over 2024
+https://open.spotify.com/playlist/2nFSBlZsXUXml3VePNuLnr  # De 538 MILLENNIUM TOP 1500 - 2024
+https://open.spotify.com/playlist/5Kmy9U2iJ5sqpLEgrhltqa  # Best Songs Of 2000’s - Hits 2000-2010 Best On Spotify🔥
+https://open.spotify.com/playlist/0Z5qNVqtgaERPHUwWheBoA  # Best Songs Of 90’s - All Hits From 1990-2000 Best On Spotify 🏆
+https://open.spotify.com/playlist/2z4FF0F0gGph8az1sp8IVh  # Top 100 over 2025
+https://open.spotify.com/playlist/4ZB8LNvjTqxyUZPzHyYYJq  # Remixes 2026 🔥 Best Popular Songs Remixed 🔥 Best Remixes & EDM Hits 2025
+https://open.spotify.com/playlist/2LfDeOgTeTMXS238zW0tCE  # Pop Rock Hits 2020-2025
+https://open.spotify.com/playlist/3Q0xcw21vfOeUKyclSYQrT  # Pop Hits 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 and 2025
+https://open.spotify.com/playlist/34y04ISddEsE2lZ2WSNuGt  # HITS 2020 - 2025 NL
+https://open.spotify.com/playlist/6G3fFII5kqz800uPlIQazG  # best party songs everyone knows ⭐⭐⭐Party 2026, 2025, 2024, 2023, 2022, 2021, 2020 Hits ⭐
+https://open.spotify.com/playlist/3GCo5Tc9CfG7zorfXxYxXQ  # Clean Classroom Playlist 2020-2025 (School Friendly Hits)
+https://open.spotify.com/playlist/7ss1lvLyNG60MztsqzO205  # Mainstream Rap & Pop Hits 2010-2022
+https://open.spotify.com/playlist/6yN4FvrxZqWb0nvNeD6HyP  # Massive Dance Remixes, Hits 2026 Remixed
+https://open.spotify.com/playlist/2mdnbXPiAYIDZZlQmahyTQ  # UK Top 40 - October 30th
+https://open.spotify.com/playlist/4QYT9VtfowdRaXgxeMb9Jy  # 2021 - Billboard Hot 100 & UK Top 40, Pop Rising, Global & Viral 50 Songs
+https://open.spotify.com/playlist/64FFJb0uU6UGtdmSU21UPQ  # Chris Country top 40 (2021)
+https://open.spotify.com/playlist/5XVk7Y6qZTy5MbkSCECNSS  # Best Of 2021 Charts
+https://open.spotify.com/playlist/5c0fq0h4Mva12NfnXxhwXp  # Best Of The Charts 2017-2021
+https://open.spotify.com/playlist/6gtoJIE7LIlOVqCSwOAimc  # 2022 UK Top 40
+https://open.spotify.com/playlist/3wwFzOYMcOVpGdF9BgbJXY  # Gaydio Radio UK 2022 🇬🇧Gaydio UK Top 40
+https://open.spotify.com/playlist/6tXzCius9I5evSbkeU4gF7  # Hits Radio UK 2022 🇬🇧Hits Radio Top 40 UK
+https://open.spotify.com/playlist/039Z5DJZuI8ioozlrUtupj  # KISS FM UK Radio 2022 🇬🇧KISS FM Top 40
+https://open.spotify.com/playlist/24fyj4beGYRMm1kfNCGe8a  # 2023 Top 100 UK Hits
+https://open.spotify.com/playlist/0D4nXLFuioKHnIdzSnnITn  # KISS FM Ukraine 2023 | TOP 40 | Кісс ФМ Радіо Україна (2)
+https://open.spotify.com/playlist/47jXh1V69cIGqtfbZ61O5c  # Now Yearbook 1986 (2023)
+https://open.spotify.com/playlist/48m6a2t498kTpmSjy7B1zJ  # UK Top 40 2024 - UK Hits 2024 This Week (UK Most Played Songs 2024)
+https://open.spotify.com/playlist/2eKkVI0AvYBJEnvD3JoVoy  # UK Grime Rap 2024 - Top 40 Best Grime Rap Songs 2024 (UK Rap Grime Playlist)
+https://open.spotify.com/playlist/4EdAP9IDgeuUpFO07DgpZP  # UK Top 40 Hit Singles of the 2000s,  2010s & 2020s
+https://open.spotify.com/playlist/5k1XMDuHQZ11DLIfnFQmuM  # UK Garage Charts/Pop (Top 40) 2024/25 || That Garage Sound / UKG / Pop/R&B/NuGarage
+https://open.spotify.com/playlist/7gWLPPefhGaXmBCjeJqqky  # 2020-2024 Radio Hits
+https://open.spotify.com/playlist/0tyaqq5QcCOt6iOru9Kg51  # NPO Radio 2 • TOP 2000 (2025)
+https://open.spotify.com/playlist/0z1Glvyd6q7UJL4bZpaPNs  # Sky Radio Hits (wekelijkse update)
+https://open.spotify.com/playlist/0BKY5aT0tdyWYRT1qBkM5q  # Éxitos Pop Español 1990 - 2000 - 2010 - 2019 - 2020 - 2021 - 2022 - 2023 - 2024 - 2025
+https://open.spotify.com/playlist/5jrx82Xfd4jy7ppL3lEqlO  # New Hindi 2020-2024
+https://open.spotify.com/playlist/1xsIwE3IFeUzKX9Gd0Fr3q  # 2020s Hits | Best Songs 2020-2026
+https://open.spotify.com/playlist/1638KZlvcvyyEJ15S8erge  # Best of 2020-2026 · Greatest Hits 2020/2026
+https://open.spotify.com/playlist/0d2V1YgJAcSr0NdATyAtmU  # Country Hits 2020s | Best Songs 2020-2026
+https://open.spotify.com/playlist/7Esrh8aYjjLPZh9KXPBMVk  # Kanye Songs
+https://open.spotify.com/playlist/5vbLsvu6F6dI1isIau1Umw  # Rock Hits 2020s | Greatest Songs 2020-2026
+https://open.spotify.com/playlist/2pnt79m93NytfAj2lByLlQ  # Q-top 1500 | editie 2025 | Qmusic
+https://open.spotify.com/playlist/6fTxgamgunG2rWYxZ2MlVc  # Hot Dance Hits 2021 ft. Black Magic, Joel Corry, Shane Codd, Talk About
+https://open.spotify.com/playlist/4lLyrGDoqPwHYUStoUpPJn  # Best Old School Party Songs Playlist - Greatest R&B, Hip-Hop & Rap Hits (70s, 80s, 90s, 00s Music Playlist Updated in 2021)
+https://open.spotify.com/playlist/7cUIJRdO9GlYLUMxJMG3CF  # HOT CLUB HITS 💥-SRILANKA 2021
+https://open.spotify.com/playlist/5kwjhJsxPB8xQMGnBh244R  # TRIPLE J HOTTEST 100 2021 📻| Australian Hits
+https://open.spotify.com/playlist/4BWQyZjYCukfwrydWay4P8  # 2000-2022 Hot Hits
+https://open.spotify.com/playlist/4lNitSlKocO150IZZVnzSQ  # Biggest Hot 100 Hits (2006-2022)
+https://open.spotify.com/playlist/4KVTkXxO0yG46O8JOF4VIE  # CLEAN POP (radio edits) 2022 | Top POP | Top Hits Clean | Hot Hits Clean | Clean RnB | Clean Rap (2)
+https://open.spotify.com/playlist/6b8350vVrYPsOFluMBeCSO  # Hits Top 50 | Hitlijst NL november 2026
+https://open.spotify.com/playlist/6AesWQ2mJ3NLiJXgkTyLG8  # Hot Hits World
+https://open.spotify.com/playlist/5Kudf1hxJBoAnFwTIRnGLy  # Hot Summer Vibe Hits 🌴 2023
+https://open.spotify.com/playlist/3GtvYYv254AKnJx9mcGM3E  # 2023 - 2024 era
+https://open.spotify.com/playlist/2jme5H1BPEfuVUkeRuZTYc  # 🔥 ToP MelhOr pOp 2023 - Paradas - Hits - Hot - Track - Best - الحار - الزيارات- Treino - Gym
+https://open.spotify.com/playlist/13AukwgyYC8nq7VYK5TS0W  # Top 50 Netherlands | Hot Hits Netherlands 2024
+https://open.spotify.com/playlist/0ktdt9N9zpI12tZasKcx2A  # David Guetta, One Republic - I Don't Wanna Wait | THE BEST HITS 2024 | HOTTEST.
+https://open.spotify.com/playlist/23egzbhkjT4TrDD669J2eH  # Ibiza Chill House | Summer House Hits Verano 2026 🍹 | The Good Life | Tropical Music
+https://open.spotify.com/playlist/15YBSMfi1hqfc4s8bVzmJb  # mario kart study music
+https://open.spotify.com/playlist/4wPrhrEROnaeqbw6q08gu6  # Escándalo - Ñengo Flow
+https://open.spotify.com/playlist/2iMXWejpxcA8RQ0qyAUD08  # Mario Bros musica
+https://open.spotify.com/playlist/2dBJaaVgeh8vcMZ75nfqMe  # HOT RAP SONGS: February 2023
+https://open.spotify.com/playlist/2cbpkuZyn8Alz86h4BzwYF  # New Music Friday MTL 2024
+https://open.spotify.com/playlist/6yrICWqvDTyN6s3Y2d0Je8  # Italy Top 50 | Top 50 Italia | Top 50 Chart Italy 2024 | Hot Hits Italia
+https://open.spotify.com/playlist/68Tyo4p3HRG5nNONEJ7WKJ  # Morfina Freestyle – Ñengo Flow
+
+# --- Auto-discovered playlists via Spotify Search ---
+https://open.spotify.com/playlist/1P4uZbpP3FmTfODOoYUnI5  # Billboard 2018 - 2020
+https://open.spotify.com/playlist/4tA2Hy1LydNjomN93NgXCy  # Billboard's Top100 Songs of the '20s, so far
+https://open.spotify.com/playlist/2z7vYU6cGWq1KJDy5BATEa  # Billboard Hot 100 Decade-End 2020s
+https://open.spotify.com/playlist/4rdQ1o0NbmzS4kcRstSXGv  # 250 Most Covered Songs of the Billboard Hot 100 Era (1958-2020)
+https://open.spotify.com/playlist/7nppx7uLgcmkZHg70HNfOk  # Tech House 2026
+https://open.spotify.com/playlist/4OktfCqjFY7qcpUR4dLID8  # playlist 200
+https://open.spotify.com/playlist/2xRGmKkbMkHhEtwZ1SYD1y  # Top 100 Piano Covers - Best of 2010's & 2020s - Cover Versions Of Pop Songs For Study (2010-2026)
+https://open.spotify.com/playlist/5pT9DvpEMYtkINr2vOtwmQ  # 2021 Billboard Year End Hot 100
+https://open.spotify.com/playlist/6C8GBgqiWIzKCzCQBc2CSQ  # Billboard Top 100 - 2018
+https://open.spotify.com/playlist/5wZXFilAVVJyI7E6Nu0Hdw  # Billboard‘s Greatest of All Time Hot100 Songs
+https://open.spotify.com/playlist/1RBzoQOJ8Px5njKv39uA5r  # 2022 Billboard Hot 100
+https://open.spotify.com/playlist/2XcLCvQ2EsBr9Hxw9BQxgR  # Billboard Hot 100 Top 10
+https://open.spotify.com/playlist/2DslfsXMtUCCa1rcKwRaPi  # Time Machine 2022 - Billboard Year-End Hot 100
+https://open.spotify.com/playlist/49pdrktxM4r1FXDfS10UPM  # Hot Billboards 100✅
+https://open.spotify.com/playlist/1hk07H2gMO0HSKsu2kQWfK  # 2022 Billboard JAPAN HOT 100
+https://open.spotify.com/playlist/4UIbBd9UK3gHx5mdFenCii  # Billboard Hot 100 All Time - TOP HITS SONGS 2023
+https://open.spotify.com/playlist/1igY2juckUROIOgtJ6c5B2  # 2023 Billboard Hot 100
+https://open.spotify.com/playlist/6oV2ru4dQ2wyPgIIN8ZTyG  # Billboard Hot 100 - Top 100 - Hot Hits 2023 - Top 100 Songs of 2023 - Top Hits
+https://open.spotify.com/playlist/3zHcQwZeNJdFtu2LP1YQke  # 2023年 年間Billboard JAPAN総合ソング・チャート“JAPAN Hot 100”
+https://open.spotify.com/playlist/41TrZuBoO5HGF0Xt970jcK  # Speed Garage 2026
+https://open.spotify.com/playlist/0knR5s1OoYxq7JG1q5f3KI  # 2024 Billboard Top 100
+https://open.spotify.com/playlist/1LSXxWhYAVWWfb847gLIcD  # 2024 Billboard Year End Hot 100
+https://open.spotify.com/playlist/530csserpRH3vBMxfLrIxk  # 2024年 年間Billboard JAPAN総合ソング・チャート“JAPAN Hot 100”
+https://open.spotify.com/playlist/7cX2R5a8XhQ0FqBsSIeCpa  # 2024年 上半期Billboard JAPAN総合ソング・チャート“JAPAN Hot 100”
+https://open.spotify.com/playlist/5HsITJ2foFPJqZ96AJ9I0i  # Billboard Year End Hot 100 - 2025
+https://open.spotify.com/playlist/1ZXZl6JJMQR8GTkeldkcZH  # 2025年 上半期Billboard JAPAN総合ソング・チャート“JAPAN Hot 100”
+https://open.spotify.com/playlist/2su7zDvBGlYYI1xWkeCaEo  # 洋楽Billboard年間HOT100 1990–2025
+https://open.spotify.com/playlist/5SLPaOxQyJ8Ne9zpmTOvSe  # 最近流行りの曲2025/08/27　Billboard JAPAN Hot 100の日本語含む・日本人の歌 【J-POP】はやりの曲
+https://open.spotify.com/playlist/2fmTTbBkXi8pewbUvG3CeZ  # Top Hits of 2020
+https://open.spotify.com/playlist/5Q1uwKiu9qmPtylOakx9K8  # Top 40 2020
+https://open.spotify.com/playlist/1TtnLC38EzOceJOjvJ08FV  # Nederlandse Rap 2026 🇳🇱 | Hip Hop NL | Top 50 Hits | Dutch Rap 🔥
+https://open.spotify.com/playlist/04EKmJhBK8dLL6SONP5dyq  # Dance Hits 2000 - 2026 (Top 100) 🎉
+https://open.spotify.com/playlist/278mlOibTLiKvYZKhPHtlD  # Treino 2026 💪🏼 Top Músicas Para Treinar 🔥 Melhores Hits Para Malhar na Academia | Musculação & Cardio
+https://open.spotify.com/playlist/7bn6kMzjpjhY2v82IttDYw  # Top 2000 2022
+https://open.spotify.com/playlist/2uLyFLkOuu2B4zg0omtQ50  # Zomer 2022-2025 TOP HITS
+https://open.spotify.com/playlist/71cbKIrOTsTy0V6UREpCox  # Treino 2026 🍑 Top Músicas Para Treinar 🔥 Melhores Hits Para Malhar na Academia | Musculação & Cardio
+https://open.spotify.com/playlist/1YvHZR6lwysBB6UNUa800r  # SHAZAM TOP HITS 2026  | TOP  200 WORLD  CHART | World Hits 2026 |
+https://open.spotify.com/playlist/1Mq3dRAnY8e17vWMTDRmmm  # Tops Songs 2023
+https://open.spotify.com/playlist/2p6S7MdKglWraArQDhidYz  # De 538 TOP 1000 - 2023
+https://open.spotify.com/playlist/3YALro0rCTqp1PwD4UaoHB  # Top 4000 Radio 10 2024
+https://open.spotify.com/playlist/1Cgey68pUlQGsCPI2wJuxr  # Best of 2026 🔥 Most Popular Hits 2026 Hits
+https://open.spotify.com/playlist/0EkyVFAIhXidCEHK4gA0K8  # My Hits 2024
+https://open.spotify.com/playlist/76LGgjwx1uXa4mraTxa9a4  # De 538 TOP 1000 - 2024
+https://open.spotify.com/playlist/5KECDuKRfwbSTIk30juBUA  # Best Songs of 2024
+https://open.spotify.com/playlist/4HOlG8KlmZk1mMpkMeNtR6  # 2024 HITS 🎸 Best Viral Hits 2024 & Top Songs 2024 - Best of 2024 Music : POP Songs HITS 2024
+https://open.spotify.com/playlist/5KJDMJe9EJ7QRz8FG2MIpI  # BEST HITS 2026 🔥 Popular Songs 🎵 Top Music Hits 🎵
+https://open.spotify.com/playlist/2rQTKyoNgZbc8wqIwI1Jq3  # SUMMER MIX 2026🌴Chill Hits
+https://open.spotify.com/playlist/1MQmPhKcSH2XoZPnRo8EHE  # Top 1000 Allertijden (2026)
+https://open.spotify.com/playlist/1WH6WVBwPBz35ZbWsgCpgr  # Top Pop Hits 2015-2026
+https://open.spotify.com/playlist/6TS82DAmPlt4G2YJjrgpOX  # Pop hits 2020 - 2024
+https://open.spotify.com/playlist/2OFfgjs6kj0eA6FNayhAAJ  # 100 Greatest Pop Songs Ever
+https://open.spotify.com/playlist/5r6IfrLFMG4bmWpuuShEBq  # MIX REGGAETON 2026 🌞 LATIN HITS 2025, 2024, 2023, 2022, 2021 & 2020 🌞
+https://open.spotify.com/playlist/00lcDNEw2Ych9srALHrMEr  # Musica Latina 2026 💛 Top Éxitos Latinos 2025
+https://open.spotify.com/playlist/0zvAjEmuL7vlrGtaXMSARi  # Pop Inglés 🌼 (2025 & 2020s & 2010s) Música En Inglés 2010s Hits
+https://open.spotify.com/playlist/3WXqQpv04n6zRbxXJVMTqB  # Mainstream Hits 2026 | Viral Songs, Chart Hits & Top Tracks
+https://open.spotify.com/playlist/5iwkYfnHAGMEFLiHFFGnP4  # HITS 2026 - Today's Top Songs
+https://open.spotify.com/playlist/2BQwHRbaKQZiqoE2EFhOqK  # Radio 10 Top 4000 (2025)
+https://open.spotify.com/playlist/4iwpEQX1rDkOWDpGIn3nZT  # Top 40 2021
+https://open.spotify.com/playlist/2DvMbcwz4VPXkKjHQYqZTd  # TOP4000 Radio 10
+https://open.spotify.com/playlist/5RwKkyt7t8esOSVkP4J4Oz  # The Official UK Top 40 (Clean)
+https://open.spotify.com/playlist/5ZuMnxrPfwXGu3RoZ14FOt  # Top 40 UK Singles Chart 30/09/2022
+https://open.spotify.com/playlist/7i1rVSB4dczirDn4vDXGTx  # The UK's Official Songs of the Summer 2022
+https://open.spotify.com/playlist/0DZPJedyveLXBXFnaq2jeA  # Q-Top 40 (Wekelijkse Update)
+https://open.spotify.com/playlist/28H0uERxevIbbQEiyvP4t5  # Top 40 Songs of 2022 2023
+https://open.spotify.com/playlist/5SjG6hsUJNT9xWl2dg7smy  # Radio 10 Top 4000 - 2023
+https://open.spotify.com/playlist/1DTzz7Nh2rJBnyFbjsH1Mh  # NPO Radio 2 Top 2000 (2025)
+https://open.spotify.com/playlist/0XUTG3I96ji8iEE1Qq6Ra6  # Sky Radio Hits | NON STOP HITS | TOP 40 | Sky Radio 101 |
+https://open.spotify.com/playlist/03xpIJQWwlPUCz9wnXo5H7  # RADIONL TOP 30
+https://open.spotify.com/playlist/7pt4ZCdbSgoUPQ9dk6osVl  # jiska and ruben's songs
+https://open.spotify.com/playlist/6JpGyIjFccZ6COElPnDZKu  # Q-top 500 van de 10s | editie 2024 | Qmusic
+https://open.spotify.com/playlist/4P3mhHPUSSZrsgOrnt5PIM  # Hot Hits UK - RnB Today  (Today’s Top UK RnB Hits) Slow Bass RnB | UK Hip Hop | 2021 RnB Hits | Slow Jams | UK Pop | Jorja Smith - Be Honest
+https://open.spotify.com/playlist/7gwthBoLwD3pmNAddLghAf  # Top 100 over 2018
+https://open.spotify.com/playlist/3Invk29DhmBPOXtiYDpusk  # Amapiano Party Mix🇿🇦🔥[2021-2026][Latest & Hottest Hits outta South Africa🇿🇦🔥]
+https://open.spotify.com/playlist/7jK59RCgVYkRA0T2cTxD86  # QQ音乐巅峰榜（热歌）- Top Hits in China
+https://open.spotify.com/playlist/1M5nMYSRHYIJq1b9JrBWCG  # Hot Hits Global - Today's Top Hits 2022 (Pop Rap & RnB) Top Hits of Todays Music | Top Pop Hits |POP
+https://open.spotify.com/playlist/7tfFgek93xX7QY3LIV24LP  # Hot Hits 2019-2022
+https://open.spotify.com/playlist/3Ieq4kODUUKTwBLm9VGJ0N  # Qmusic Hits (updated weekly) | Qmusic
+https://open.spotify.com/playlist/1bX4VAt70mxahFcIZ9RGvW  # 100% NL Top 20
+https://open.spotify.com/playlist/3fItEtOvilM9j51RH2bOLq  # LB’s hot hits 2023
+https://open.spotify.com/playlist/2aHrDJheD1zg0HxkwxQLtE  # 2023 Hotter Heat
+https://open.spotify.com/playlist/54AhsdZbmVc5ieL6mSKrbN  # Germany Top 50 | Top 50 Germany | Deutschland Top 50 2025 | Hot Hits Germany
+https://open.spotify.com/playlist/2XZCPyMbiHhJTFgdDILGz1  # SUMMER Dance Hits 2024 🏝
+https://open.spotify.com/playlist/6PCER5h3c83Z0YAOpbwLeG  # Dua Lipa, Selena Gomez, Miley Cyrus, Ed Sheeran, The Weeknd, Rihanna - Billboard Hot 10 De la semana
+https://open.spotify.com/playlist/6L6xSsVtAtR4ctn4jJwBMf  # Vas a Destrozarme - Mau y Ricky
+https://open.spotify.com/playlist/7aKkTmIfj1Evrs0OJjNFdG  # Feliz - Gente De Zona
+https://open.spotify.com/playlist/4AHFJkSKiFnwHrjuMKQquC  # SXM Festival 2024 | New Music Friday
+https://open.spotify.com/playlist/18YyeXuvWxEBa9HIdoZXr7  # 2024 New Music Friday
+https://open.spotify.com/playlist/3pfjbmxZU5dhcYhO71vmWa  # New Music Friday Country - Country Music 2024, New Country Release, Country Release, Pop, Songs
+https://open.spotify.com/playlist/1R8wvZHSM7HF8PSQPFNGsj  # New Music Friday Nov 2026

@@ -1,7 +1,7 @@
 """
 Phase 1 Pipeline Entrypoint:
 1. Scrape curated Viral (label=1) and Non-Viral (label=0) Spotify playlists (2020-2025).
-2. Match tracks strictly on `(norm_artist, norm_title)` against `theelderemo/genius-lyrics-cleaned`.
+2. Fetch plain lyrics concurrently via the LRCLIB API with strict exact matching on `(norm_artist, norm_title)`.
 3. Log progress toward the 3,000 Viral / 3,000 Non-Viral target.
 4. Build the balanced dataset and create the stratified 80/20 train-test split.
 
@@ -18,7 +18,7 @@ from typing import Tuple
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-from src.data.genius_matcher import match_spotify_to_genius
+from src.data.lrclib_fetcher import fetch_lyrics_lrclib
 from src.data.spotify_scraper import (
     DEFAULT_NON_VIRAL_CONFIG,
     DEFAULT_RAW_DIR,
@@ -47,14 +47,14 @@ def print_collection_report(
     nv_rate = (nv_m / nv_sp * 100.0) if nv_sp else 0.0
 
     print(f"\n{'=' * 78}")
-    print("PHASE 1 PROGRESS REPORT (2020-2025 English Lyrics Corpus)")
+    print("PHASE 1 PROGRESS REPORT (LRCLIB Matched Lyrics Corpus)")
     print(f"{'=' * 78}")
     print(
-        f"  Viral (label=1)     : {v_sp:5d} Spotify (2020-25) -> {v_m:5d} Genius matched "
+        f"  Viral (label=1)     : {v_sp:5d} Spotify -> {v_m:5d} LRCLIB matched "
         f"({v_rate:5.1f}%) | Target: {target_per_class} ({max(0, target_per_class - v_m)} more needed)"
     )
     print(
-        f"  Non-Viral (label=0) : {nv_sp:5d} Spotify (2020-25) -> {nv_m:5d} Genius matched "
+        f"  Non-Viral (label=0) : {nv_sp:5d} Spotify -> {nv_m:5d} LRCLIB matched "
         f"({nv_rate:5.1f}%) | Target: {target_per_class} ({max(0, target_per_class - nv_m)} more needed)"
     )
     print(f"{'=' * 78}\n")
@@ -70,8 +70,8 @@ def build_balanced_splits(
 ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """
     Sample up to `target_per_class` songs per class (prioritizing tracks that appeared
-    most frequently across curated playlists, then random tie-breaking), balance the two
-    classes if desired, and perform a stratified 80/20 train-test split.
+    most frequently across curated playlists, then random tie-breaking), and perform a
+    stratified 80/20 train-test split.
     """
     processed_dir.mkdir(parents=True, exist_ok=True)
 
@@ -82,7 +82,6 @@ def build_balanced_splits(
     def _select_top_n(df: pd.DataFrame, n: int) -> pd.DataFrame:
         if len(df) <= n:
             return df.copy()
-        # Shuffle first with fixed seed for deterministic tie-breaking, then sort by playlist_frequency
         shuffled = df.sample(frac=1.0, random_state=random_state)
         return shuffled.sort_values("playlist_frequency", ascending=False, kind="mergesort").head(n).copy()
 
@@ -114,19 +113,15 @@ def build_balanced_splits(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build the Viral vs. Non-Viral lyrics dataset (Phase 1).")
+    parser = argparse.ArgumentParser(description="Build the Viral vs. Non-Viral lyrics dataset via LRCLIB (Phase 1).")
     parser.add_argument("--target", type=int, default=3000, help="Target number of songs per class (default: 3000)")
     parser.add_argument("--min-year", type=int, default=2020, help="Minimum release year (default: 2020)")
     parser.add_argument("--max-year", type=int, default=2025, help="Maximum release year (default: 2025)")
+    parser.add_argument("--workers", type=int, default=8, help="Concurrent LRCLIB worker threads (default: 8)")
     parser.add_argument(
         "--skip-spotify",
         action="store_true",
-        help="Reuse already-scraped parquet files in data/raw/ instead of calling the Spotify API",
-    )
-    parser.add_argument(
-        "--no-streaming",
-        action="store_true",
-        help="Download the full Hugging Face Genius dataset to disk instead of streaming",
+        help="Reuse already-scraped parquet files in data/raw/ instead of re-scraping playlists",
     )
     args = parser.parse_args()
 
@@ -155,11 +150,9 @@ def main() -> None:
         )
         return
 
-    matched_all, unmatched_all = match_spotify_to_genius(
+    matched_all, unmatched_all = fetch_lyrics_lrclib(
         spotify_df=combined_sp,
-        streaming=not args.no_streaming,
-        min_year=args.min_year,
-        max_year=args.max_year,
+        max_workers=args.workers,
     )
 
     if not unmatched_all.empty:
@@ -187,4 +180,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
